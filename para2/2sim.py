@@ -10,7 +10,7 @@ class Student:
 
     def to_study(self):
         print ("time to study")
-        self.progress += 0.12
+        self.progress += 0.10
         self.gladness -= 3
     def to_sleep(self):
         print ("time to sleep")
@@ -18,11 +18,11 @@ class Student:
     def to_chill(self):
         print ("rest time")
         self.gladness += 5
-        self.progress -= 0.15
+        self.progress -= 0.20
     def to_read(self):
         print ("time to read")
-        self.gladness -= 3
-        self.progress += 0.25
+        self.gladness -= 4
+        self.progress += 0.2
 
     def is_alive(self):
         if self.progress < - 0.5:
@@ -39,7 +39,7 @@ class Student:
         print (f"progress = {round(self.progress, 2)}")
     def live(self, day):
         text_day = f"day{day} of {self.name} live"
-        print (f"{text_day:=^30} ")
+        print (f"{text_day:=^40} ")
         cube = randint(1, 4)
         if cube == 1:
             self.to_sleep()
@@ -56,7 +56,7 @@ class Student:
 
 
 Nick = Student(name="Kick")
-for day in range(365):
+for day in range(1, 366 ):
     if Nick.alive == False:
         break
     Nick.live(day)
